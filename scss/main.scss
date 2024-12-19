@@ -4,20 +4,35 @@
     box-sizing: border-box;
 }
 
-.flexr {
+.heading{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-}
-.flexc {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    h1{
+        font-size: 3.5em;
+        color: red;
+    }
 }
 
 .menu {
+    padding: 40px;
     height: 50vh;
-    background-color: rgb(11, 118, 212);
+    flex-direction: column;
+    .menuItem{
+        padding: 10px 0;
+        background-color: red;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .foodName{
+        margin: 0 110px;
+        font-size: 24px;
+        color: rgb(255, 255, 255);
+    }
+    .foodPrice{
+        margin: 0 110px;
+        font-size: 18px;
+        color: rgb(255, 255, 255);
+    }
 }

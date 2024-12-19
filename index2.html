@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .menu {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        .food-name {
+            font-weight: bold;
+        }
+        .food-price {
+            color: #28a745;
+        }
+        .order-button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .order-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu" id="menu"></div>
+
+    <script>
+        // Food menu object
+        const foodMenu = [
+            { name: "Pizza", price: "$12.99" },
+            { name: "Burger", price: "$8.99" },
+            { name: "Pasta", price: "$10.99" },
+            { name: "Salad", price: "$6.99" },
+            { name: "Sushi", price: "$14.99" }
+        ];
+
+        // Select menu container
+        const menuContainer = document.getElementById('menu');
+
+        // Add food items dynamically to the menu
+        foodMenu.forEach(item => {
+            const menuItem = document.createElement('div');
+            menuItem.className = 'menu-item';
+
+            const foodName = document.createElement('span');
+            foodName.className = 'food-name';
+            foodName.textContent = item.name;
+
+            const foodPrice = document.createElement('span');
+            foodPrice.className = 'food-price';
+            foodPrice.textContent = item.price;
+
+            const orderButton = document.createElement('button');
+            orderButton.className = 'order-button';
+            orderButton.textContent = 'Order';
+            orderButton.onclick = () => alert(`You ordered: ${item.name}`);
+
+            menuItem.appendChild(foodName);
+            menuItem.appendChild(foodPrice);
+            menuItem.appendChild(orderButton);
+            menuContainer.appendChild(menuItem);
+        });
+    </script>
+</body>
+</html>
